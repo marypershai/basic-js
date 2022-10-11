@@ -17,5 +17,27 @@ function getSeason(/* date */) {
 }
 
 module.exports = {
-  getSeason
+  getSeason(date){
+      if(date){
+        try {
+            let month = date.getUTCMonth();
+            console.log(month);
+            let season;
+            if(month < 2 || month == 11){
+              season = 'winter'
+            } else if(month > 1 && month < 5) {
+                season = 'spring';
+            } else if(month > 4 && month <8){
+              season = 'summer';
+            } else{
+              season = 'autumn';
+            }
+            return season;
+        } catch { 
+          throw new Error('Invalid date!')
+        }
+      } else {
+        return "Unable to determine the time of year!";
+      }
+  }
 };
