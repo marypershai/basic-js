@@ -36,7 +36,7 @@ function transform(arr) {
       }
     }
     return resultArr;
-  } else throw new Error("'arr' parameter must be an instance of the Array!");;
+  } else throw new Error("'arr' parameter must be an instance of the Array!");
 
 }
 
